@@ -355,7 +355,7 @@ Accept wildcard characters: False
 
 ### -Scope
 
-{{Fill Scope Description}}
+Specifies the search scope for the package.
 
 ```yaml
 Type: String

@@ -37,20 +37,23 @@ conditions.
 The syntax of the $PSDefaultParameterValues preference variable is as follows:
 
 ```powershell
-$PSDefaultParameterValues=@{"<CmdletName>:<ParameterName>"="<DefaultValue>"}
+$PSDefaultParameterValues["<CmdletName>:<ParameterName>"] = "<DefaultValue>"}
 
-$PSDefaultParameterValues=@{"<CmdletName>:<ParameterName>"={<ScriptBlock>}}
+$PSDefaultParameterValues = @{"<CmdletName>:<ParameterName>"="<DefaultValue>"}}
 
-$PSDefaultParameterValues["Disabled"]=$true | $false
+$PSDefaultParameterValues["<CmdletName>:<ParameterName>"] = {<ScriptBlock>} }
+
+$PSDefaultParameterValues["Disabled"] = <$true|$false>
 ```
 
 Wildcard characters are permitted in the CmdletName and ParameterName values.
 
 The value of \$PSDefaultParameterValues is a
 System.Management.Automation.DefaultParameterDictionary, a type of hash table
-that validates the format of keys. Enter a hash table where the key consists
-of the cmdlet name and parameter name separated by a colon (:) and the value
-is the custom default value.
+that validates the format of keys. Set each key/value pair in the table, where
+the key consists of the cmdlet name and parameter name separated by a colon (:)
+and the value is the custom default value, or assign a new hash table with
+appropriate key/value pairs to replace the existing settings completely.
 
 To set, change, add, or remove entries from \$PSDefaultParameterValues, use the
 methods that you would use to edit a standard hash table.
